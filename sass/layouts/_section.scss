@@ -1,0 +1,65 @@
+//  @section
+//  modules/_section.scss
+
+// Sections
+//
+//  Sections contain sections of content with padding on the top and bottom.
+//  Colored sections only add a background color. They should be used with another section class that adds padding.
+//
+//  Note: The ```<section>``` element is not meant to be used for styling per the spec--
+//  see http://html5doctor.com/avoiding-common-html5-mistakes/
+//  and http://www.w3.org/TR/html5/sections.html#the-section-element for more info
+//  "The section element is not a generic container element.
+//   When an element is needed only for styling purposes or as a convenience for scripting,
+//   authors are encouraged to use the div element instead."
+//
+//
+//Real color names are used here as background color is not tied
+//to any action or content, and using a real color is easier to remember
+// while coding than "brand-complimentary" for instance.
+//
+//If the design changes drastically and the brand color changes
+//from, let's say, blue to green, just do a global
+//find/replace - that's what text editors are for.
+//
+// Styleguide 4.3
+
+
+// Section styles
+//
+// markup:
+// <div class="section {$modifiers}">
+// <p>You can view upcoming tests that have been scheduled through our old process by accessing the ​<b>Tests Scheduled by Date</b>
+// report from the View Reports page.</p>
+// </div>
+//
+// .section       - Base section style with bottom padding.  Use with ```.container``` classes to control width.
+//
+// Styleguide 4.3.2
+
+.section {
+  padding-bottom: 2*$base-spacing;
+  @include breakpoint($small-screen-down) {
+    padding-bottom: $base-spacing;
+  }
+}
+.section-medium {
+  padding-bottom: $base-spacing;
+}
+.section-thin {
+  padding-bottom: $base-spacing /2;
+}
+
+@include breakpoint($small-screen-down) {
+  .section-small-screen-no-padding {
+    padding: 0;
+  }
+}
+
+// Section with top and bottom margin to be used at top and bottom of page
+// Otherwise padding should all go in one direction
+
+.section-end {
+  margin-top: 2*$base-spacing;
+  margin-bottom: 2*$base-spacing;
+}

@@ -1,0 +1,29 @@
+//base_html.scss
+
+//HTML should contain the site's default background color and font-size
+//------------------------------------------------------
+
+// Base
+//
+// Styleguide 1.0
+
+// HTML
+//
+// Sets the background to $white, and the font size to 100% for largest viewports. Font size scales down to 98% at $large-screen-down. Sets up box-sizing to border box for all elements.
+//
+// Styleguide 1.1.
+
+html {
+  background: $white;
+  box-sizing: border-box;
+  font-size: $base-font-size; //100%
+  height: 100%;
+  width: 100%;
+    @include breakpoint($large-screen-down) {
+      font-size: 98%;
+    }
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}

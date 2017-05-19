@@ -1,0 +1,74 @@
+// base/_margin.scss
+
+// Margin Helper Classes
+//
+// Top and and bottom spacing should mostly be taken care of by adding section classes within layouts.
+// On occasions when you need to add top and bottom margins (when adding a button to the bottom of a form for example),
+// you may use these helper classes.  Left and right margin helper classes are also available.
+//
+// markup:
+// <button class="button {$modifiers}">{$modifiers}</button>
+//
+// .margin-1em-top        - adds 1em margin to top
+// .margin-2em-top        - adds 2em margin to top
+// .margin-1em-bottom     - adds 1em margin to bottom
+// .margin-2em-bottom     - adds 2em margin to bottom
+// .margin-1em-top-bottom - adds 1em margin to top and bottom
+// .margin-2em-top-bottom - adds 2em margin to top and bottom
+// .margin-left-1em       - adds 1em margin to left
+// .margin-left-2em       - adds 2em margin to left
+// .margin-right-1em      - adds 1em margin to right
+// .margin-right-2em      - adds 2em margin to right
+// .margin-bottom-none    - removes any margin bottom
+//
+// Styleguide 1.7
+
+.margin-1em-top {
+  margin-top: 1em;
+}
+
+.margin-2em-top {
+  margin-top: 2em;
+}
+
+.margin-1em-bottom {
+  margin-bottom: 1em;
+}
+
+.margin-2em-bottom {
+  margin-bottom: 2em;
+}
+
+.margin-1em-top-bottom {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.margin-2em-top-bottom {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.margin-left-1em {
+  margin-left: 1em;
+}
+
+.margin-left-2em {
+  margin-left: 2em;
+}
+
+.margin-right-1em {
+  margin-right: 1em;
+}
+
+.margin-right-2em {
+  margin-right: 2em;
+}
+
+.margin-right-3em {
+  margin-right: 3em;
+}
+
+.margin-bottom-none {
+  margin-bottom: 0;
+}

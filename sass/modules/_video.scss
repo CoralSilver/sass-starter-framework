@@ -1,0 +1,34 @@
+// Videos
+//
+// Styleguide 2.8
+
+// Responsive video
+//
+// Can be used without or with the ```poster``` attribute to add a static image that will show until the video is played
+//
+// markup:
+// <div class="video-wrapper">
+//    <video src="https://nursing-assets-web-ktp.s3.amazonaws.com/admin/userguide/test_scheduling_tour_video.mp4" controls poster="https://nursing-assets-web-ktp.s3.amazonaws.com/admin/userguide/test_scheduling.png">
+//    Your browser does not support the video tag.
+//    </video>
+// </div>
+//
+// Styleguide 2.8.1
+
+.video-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+  position: relative;
+
+  embed,
+  object,
+  iframe,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}

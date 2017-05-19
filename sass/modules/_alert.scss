@@ -1,0 +1,85 @@
+// modules/_alert.scss
+
+// Modules
+//
+// Styleguide 3.0
+
+// Alerts
+//
+// Styleguide 3.1
+
+// Error Alert
+//
+// Error message alert for forms
+//
+// markup:
+// <div class="alert alert-error alert-dismissible" role="alert">
+//    <button type="button" class="close close-red" aria-label="Close"></button>
+//    <span>We’re sorry, that email address isn’t in our system. Please try again.</span>
+// </div>
+//
+// Styleguide 3.1.1
+
+
+// Site-wide Alert
+//
+// Site wide full width background alert module for system messages.  Inner div must be given a container class to control message width.
+//
+// markup:
+// <div class="alert alert--site-wide alert-dismissible" role="alert">
+//   <button type="button" class="close close-white" aria-label="Close"></button>
+//   <div class="container-medium-width-no-pad">
+//    <span><strong>Please note:</strong> We will be performing routine system maintenance on
+//    Sunday, June 21 from 12:00am to 12:00pm Eastern. Resources will be unavailable during this time.
+//    We appreciate your patience as we work to ensure the best experience for our customers!</span>
+//   </div>
+// </div>
+//
+// Styleguide 3.1.2
+
+.alert {
+  border-radius: $base-border-radius;
+  margin-bottom: $small-spacing;
+  padding: .8em $base-spacing;
+  &--dismissible {
+    padding-right: 2em;
+  }
+  &--error {
+    background-color: $error-background;
+    color: $error;
+  }
+  &--site-wide {
+    background-color: $alert;
+    border-radius: 0;
+    color: $white;
+  }
+  &__close {
+    color: inherit;
+    float: right;
+    font-size: $base-font-size *1.5;
+    font-weight: 600;
+    line-height: 1;
+    opacity: .7;
+    position: relative;
+    right: -0.75em;
+    top: 4px;
+    // &--red {
+    //   @include retina-sprite($close-icon-red-group);
+    // }
+    // &--white {
+    //   @include retina-sprite($close-icon-white-group);
+    //  }
+    // &--large-icon {
+    //   @include retina-sprite($large-close-icon-group);
+    // }
+    // &--medium-icon-grey {
+    //   @include retina-sprite($close-icon-grey-medium-group);
+    // }
+    // &--small {
+    //   @include retina-sprite($small-close-icon-group);
+    // }
+    &:hover, &focus{
+      opacity: 1;
+    }
+  }
+}

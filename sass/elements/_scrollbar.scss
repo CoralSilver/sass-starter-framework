@@ -1,0 +1,22 @@
+// elements/scrollbar.scss
+
+main ::-webkit-scrollbar {
+  width: 1rem;
+}
+
+main ::-webkit-scrollbar-button {
+   width:1rem;
+}
+
+main ::-webkit-scrollbar-track {
+  background-color: #eaeaea;
+  border-left: 1px solid #ccc;
+}
+
+main ::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+main ::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}

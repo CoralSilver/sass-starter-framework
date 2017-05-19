@@ -1,0 +1,136 @@
+//modules/_search.scss
+
+// Search inputs
+//
+// Styleguide 2.2.9.
+
+
+// Normal Search Input
+//
+// markup:
+// <form class="search-bar" role="form">
+//  <label class="label-bold" for="searchForStudent">Search for student by name</label>
+//  <div class="search-input">
+//    <input type="search" id="searchForStudent" role="search">
+//    <button class="button" type="submit">
+//      <img src="assets/images/search-icon_2x.png" alt="Search Icon">
+//    </button>
+//  </div>
+// </form>
+//
+// Styleguide 2.2.9.1
+
+form.search-bar {
+  position: relative;
+
+  &.indented {
+    margin-left: 1em;
+    margin-top: .5em;
+  }
+
+  .search-input {
+    position: relative;
+    max-width: 450px;
+  }
+
+  .label-with-instructions {
+    margin-bottom: $base-spacing/2;
+  }
+
+  input[type=search] {
+    border-color: darken($light-gray, 15%);
+    display: block;
+    font-size: 1em;
+    margin: 0;
+    padding: $small-spacing ($base-spacing / 3);
+    position: relative;
+    width: 100%;
+  }
+
+  button[type=submit] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    padding: 5px 10px;
+
+    img {
+      height: 19px;
+      margin: 0 .25em;
+      opacity: 1;
+    }
+  }
+}
+
+// Small Search Input
+//
+// markup:
+// <div class="search-input">
+//   <label class="screen-reader-only" for="filterSelectedStudents">Find Student</label>
+//   <input type="search" role="search" id="filterSelectedStudents" placeholder="Find student" class="small-search-box">
+//   <span class="icon"></span>
+// </div>
+//
+// Styleguide 2.2.9.2
+
+// input[type=search] {
+//   &.small-search-box {
+//     font-size: 0.875em;
+//     font-weight: normal;
+//     margin: .7em;
+//     margin-right: 0;
+//     margin-left: 0;
+//     padding: .5em;
+//     vertical-align: middle;
+//     box-sizing: border-box;
+//     padding-right: 18px;
+//     text-align: center;
+//   &::placeholder {
+//     @include retina-image('./assets/images/small-gray-search-icon', 13px 13px);
+//     background-position: $small-spacing center;
+//     background-repeat: no-repeat;
+//     content: " ";
+//     padding-left: 18px;
+//     text-align: center;
+//     vertical-align: middle;
+//   }
+//  }
+// }
+//
+// .small-search-box + .icon {
+//   width: 13px;
+//   height: 13px;
+//   position: absolute;
+//   opacity: 0.6;
+// //  z-index: 100;
+//   top: 50%;
+//   right: 7px;
+//   margin-top: -6px;
+// }
+// .clear-input-values {
+//   &::before {
+//     background: url("./assets/images/clear.png") right center no-repeat;
+//     background-size: 13px 13px;
+//     width: 13px;
+//     height: 13px;
+//     bottom: 8px;
+//     position: relative;
+//     cursor: pointer;
+//   }
+//   &::after {  //add extra space around icon for touch target
+//       content: '';
+//       position: absolute;
+//       top: -10px;
+//       right: -10px;
+//       left: -10px;
+//       bottom: -10px;
+//   }
+// }
+
+.search-container {
+  background-color: rgba($lemon-yellow, .4);
+  border: 1px solid rgba(233, 206, 151, 0.79);
+  border-radius: $base-border-radius;
+}

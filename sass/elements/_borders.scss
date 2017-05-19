@@ -1,0 +1,18 @@
+//elements/_borders.scss
+
+.border-top {
+  border-top: $base-border;
+}
+
+.border-bottom {
+  border-bottom: $base-border;
+}
+
+.border-top-bottom {
+  @extend .border-top;
+  @extend .border-bottom;
+}
+
+.no-border-b {
+  border-bottom: 0;
+}

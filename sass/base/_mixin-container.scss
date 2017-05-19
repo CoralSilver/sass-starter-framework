@@ -1,0 +1,16 @@
+// currently not using because we are using Susy container mixin with our own placeholder selector for padding
+
+@mixin container($local-max-width: $max-width) {
+  max-width: $local-max-width;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  padding: 0 1*$base-spacing;
+  @include breakpoint($medium-screen-down) {
+    padding: 0 2*$base-spacing;
+  }
+  @include breakpoint($small-screen-down) {
+    padding: 0 $base-spacing;
+  }
+}

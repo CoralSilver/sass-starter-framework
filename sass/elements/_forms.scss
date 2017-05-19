@@ -1,0 +1,286 @@
+//elements/_forms.scss
+
+// Some styles taken from Skyline:https://github.com/crushlovely/skyline
+
+// Forms
+//
+// Styleguide 2.2
+
+// ------ Base Form Styles-----
+
+// Fieldset
+//
+// markup:
+// <fieldset>Fieldset</fieldset>
+//
+// fieldset
+//
+// Styleguide 2.2.1
+
+fieldset {
+  background-color: lighten($base-border-color, 10%);
+  border: $base-border;
+  margin: 0 0 $small-spacing;
+  padding: $base-spacing;
+}
+
+// Inputs, Labels, and Selects
+//
+// markup:
+// <label for="sample">Label</label>
+// <input type="text" id="sample">
+// <select>
+//   <option>Option 1</option>
+//   <option>Option 2</option>
+//   <option>Option 3</option>
+//    <option>Option 4</option>
+// </select>
+//
+// Default label and ```input[type="text"]``` and select.  These are are all set to ```display: inline-block``` by default.  Use class ```.form-control-block``` to
+// have them display block instead.
+//
+// Styleguide 2.2.2
+
+input,
+label,
+select {
+  color: $dark-gray;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+// Label with class "required"
+//
+// markup:
+// <label class="required" for="sample">Label for required input</label>
+// <input type="text" id="sample">
+//
+// Adds an asterick to denote a required field
+//
+// Styleguide 2.2.3
+label {
+  margin-bottom: $small-spacing / 3;
+  &.required::after {
+    content: "*";
+  }
+}
+
+// A drop-down list that allows multiple selections
+//
+// markup:
+// <select multiple>
+//   <option>Option 1</option>
+//   <option>Option 2</option>
+// </select>
+//
+// Styleguide 2.2.4
+#{$all-text-inputs},
+select[multiple=multiple],
+textarea {
+  background-color: $base-background-color;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing/2;
+  transition: border-color;
+  width: 100%;
+  &:hover {
+    border-color: darken($base-border-color, 10%);
+  }
+  &:focus {
+    border-color: $purple !important; //not sure why this needs important. Otherwise is not applied to search inputs
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+}
+
+// Text Area
+//
+// markup:
+// <textarea></textarea>
+//
+// Styleguide 2.2.5
+
+textarea {
+  resize: vertical;
+  min-height: 6em;
+  padding: 1em;
+  width: 100%;
+}
+
+// @radio inputs
+// Base styling for radio inputs.  Radios are surrounded
+// by a label for better click targets.
+// Example: Radio
+// <label class="label--radio" for="radio-1"><input id="radio-1" type="radio" value="yes"> Radio label</label>
+// Example: Radio with super-long label
+// <label class="label--radio" for="radio-3"><input id="radio-3" type="radio" value="yes"> Radio label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
+
+input[type=radio] {
+  -webkit-appearance: none;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #444;
+  background: transparent;
+  &:checked {
+    background: #222;
+  }
+}
+
+.label--radio {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1em;
+  input {
+    position: absolute;
+    top: .7em;
+    left: 0;
+  }
+}
+
+
+// @checkbox inputs
+  // Base styling for checkbox inputs.  Checkboxes are surrounded
+  // by a label for better click targets.
+  // Example: Checkbox
+  // <label class="label--checkbox" for="checkbox-1"><input id="checkbox-1" type="checkbox" value="yes"> Checkbox label</label>
+  // Example: Checkbox with super-long label
+  // <label class="label--checkbox" for="checkbox-3"><input id="checkbox-3" type="checkbox" value="yes"> Checkbox label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
+
+input[type=checkbox] {
+  -webkit-appearance:none;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  border: 1px solid #444;
+  background: transparent;
+  &:checked {
+    background: #222;
+  }
+}
+
+.label--checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1em;
+  input {
+    position: absolute;
+    top: .7em;
+    left: 0;
+  }
+}
+
+input[type="file"] {
+  padding-bottom: $small-spacing;
+  width: 100%;
+}
+
+input[type="submit"].button {
+  color: $white;
+}
+
+input[type=search] {
+  appearance: none;
+  //needed to remove clear icon in IE11 as it is not included in normalize.css
+  &::-ms-clear {
+    display: none; width:0; height:0;
+  }
+  &::-ms-reveal {
+    display: none; width:0; height:0;
+  }
+}
+
+select {
+  margin-bottom: $base-spacing;
+  max-width: 100%;
+  width: auto;
+}
+
+// Labels
+// Example: label
+// <label>Don't label me, I'm a free spirit</label>
+
+label {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.label {
+  &--normal {
+    font-weight: normal;
+  }
+  &--alert,
+  &--error {
+    color: $alert;
+    display: block;
+    font-size: em(18);
+  }
+  &--larger {
+    font-size: em(18);
+    margin-bottom: $small-spacing/2;
+  }
+}
+
+// Form
+
+.form {
+ &--bordered {
+    display: block;
+    padding: 2em;
+    border: 1px solid #888;
+    background: #eee;
+ &--attention {
+  margin-bottom: $base-spacing;
+  > label{
+    color: $alert;
+    display: block;
+    font-size: em(18);
+    margin-bottom: $small-spacing;
+    }
+  }
+ &--medium-width {
+   max-width: em(650);
+ }
+
+ &--narrow {
+   max-width: em(550);
+ }
+}
+
+// A fiel contains input and label and anything else relating to it
+.field {
+  display: inline-block;
+  margin-bottom: 1.5em;
+  vertical-align: middle;
+  width: 100%;
+  > input {
+    display: inline-block;
+    margin-bottom: 0;
+    width: 74%;
+    @include breakpoint($small-screen-down) {
+      width: 100%;
+    }
+  }
+  &--label-inline {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+      width: 25%;
+      @include breakpoint($small-screen-up) {
+        padding-right: 1em;
+        text-align: right;
+      }
+      @include breakpoint($small-screen-down) {
+      width: 100%;
+    }
+  }
+}
