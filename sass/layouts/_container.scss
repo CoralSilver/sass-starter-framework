@@ -1,8 +1,5 @@
 //layout/_container.scss
 
-// container is using container mixin from Susy Grid library
-
-
 // Containers
 //
 //  The ```.container``` class is applied to restrict the
@@ -10,7 +7,7 @@
 //  It also includes right and left padding.
 //
 //  Top and bottom padding are applied with a .section element
-//  from modules/_section.scss used as a wrapper div
+//  from layout/_section.scss used as a wrapper div
 //
 //  Often, you will place a ```.container``` div within another
 //  element that has a background color. This gives you
@@ -23,17 +20,14 @@
 //      <p>Your content goes here... </p>
 //    </div>
 //  </div>
-//
-// Styleguide 4.2
+
 
 // Base Container
 //
 // markup:
 //  <div class="container">
-//  <p>You can view upcoming tests that have been scheduled through our old process by accessing the ​<b>Tests Scheduled by Date</b> report from the <a [routerLink]="['/Reports']">View Reports</a> page.
-//  </div>
-//
-// Styleguide 4.2.1
+//  <p>You can view upcoming tests that have been scheduled through our old process by accessing the ​<b>Tests Scheduled by Date</b> report from the View Reports page.</p></div>
+
 
 //Set the default container max-width
 $max-width: 74em;
@@ -51,10 +45,8 @@ $max-width: 74em;
 //
 // markup:
 //  <div class="container-medium-width">
-// <p>You can view upcoming tests that have been scheduled through our old process by accessing the ​<b>Tests Scheduled by Date</b> report from the <a [routerLink]="['/Reports']">View Reports</a> page.
-//  </div>
-//
-// Styleguide 4.2.2
+// <p>You can view upcoming tests that have been scheduled through our old process by accessing the ​<b>Tests Scheduled by Date</b> report from the View Reports page.</p></div>
+
 
 .container-medium-width {
  @include container(970px);

@@ -1,5 +1,4 @@
-//  @section
-//  modules/_section.scss
+//  layouts/_section.scss
 
 // Sections
 //
@@ -21,8 +20,6 @@
 //If the design changes drastically and the brand color changes
 //from, let's say, blue to green, just do a global
 //find/replace - that's what text editors are for.
-//
-// Styleguide 4.3
 
 
 // Section styles
@@ -34,8 +31,7 @@
 // </div>
 //
 // .section       - Base section style with bottom padding.  Use with ```.container``` classes to control width.
-//
-// Styleguide 4.3.2
+
 
 .section {
   padding-bottom: 2*$base-spacing;

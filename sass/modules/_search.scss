@@ -1,9 +1,6 @@
 //modules/_search.scss
 
 // Search inputs
-//
-// Styleguide 2.2.9.
-
 
 // Normal Search Input
 //
@@ -23,12 +20,7 @@
 form.search-bar {
   position: relative;
 
-  &.indented {
-    margin-left: 1em;
-    margin-top: .5em;
-  }
-
-  .search-input {
+  &__search-input {
     position: relative;
     max-width: 450px;
   }
@@ -72,8 +64,7 @@ form.search-bar {
 //   <input type="search" role="search" id="filterSelectedStudents" placeholder="Find student" class="small-search-box">
 //   <span class="icon"></span>
 // </div>
-//
-// Styleguide 2.2.9.2
+
 
 // input[type=search] {
 //   &.small-search-box {
@@ -128,9 +119,3 @@ form.search-bar {
 //       bottom: -10px;
 //   }
 // }
-
-.search-container {
-  background-color: rgba($lemon-yellow, .4);
-  border: 1px solid rgba(233, 206, 151, 0.79);
-  border-radius: $base-border-radius;
-}

@@ -3,8 +3,6 @@
 // Some styles taken from Skyline:https://github.com/crushlovely/skyline
 
 // Forms
-//
-// Styleguide 2.2
 
 // ------ Base Form Styles-----
 
@@ -12,10 +10,6 @@
 //
 // markup:
 // <fieldset>Fieldset</fieldset>
-//
-// fieldset
-//
-// Styleguide 2.2.1
 
 fieldset {
   background-color: lighten($base-border-color, 10%);
@@ -38,8 +32,6 @@ fieldset {
 //
 // Default label and ```input[type="text"]``` and select.  These are are all set to ```display: inline-block``` by default.  Use class ```.form-control-block``` to
 // have them display block instead.
-//
-// Styleguide 2.2.2
 
 input,
 label,
@@ -57,8 +49,7 @@ select {
 // <input type="text" id="sample">
 //
 // Adds an asterick to denote a required field
-//
-// Styleguide 2.2.3
+
 label {
   margin-bottom: $small-spacing / 3;
   &.required::after {
@@ -73,8 +64,7 @@ label {
 //   <option>Option 1</option>
 //   <option>Option 2</option>
 // </select>
-//
-// Styleguide 2.2.4
+
 #{$all-text-inputs},
 select[multiple=multiple],
 textarea {
@@ -103,8 +93,6 @@ textarea {
 //
 // markup:
 // <textarea></textarea>
-//
-// Styleguide 2.2.5
 
 textarea {
   resize: vertical;

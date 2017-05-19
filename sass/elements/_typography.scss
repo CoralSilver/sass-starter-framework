@@ -1,12 +1,6 @@
-//base/_typography.scss
-
-//body class necessary for styleguide to implement body styles within shadow dom
-// See https://github.com/SC5/sc5-styleguide#html-and-body-styles and
-// https://github.com/SC5/sc5-styleguide/issues/623
+//elements/_typography.scss
 
 // Typography
-//
-// Styleguide 1.3
 
 // Base body font
 //
@@ -17,8 +11,7 @@
 // p - Base body font is set at 100% on html and gradually decreased with viewport width.
 // At breakpoint($large-screen-down) it is set at 96%.
 // At @include breakpoint($small-screen-down) it is set at 94%.
-//
-// Styleguide 1.3.1
+
 body {
   font-feature-settings:"kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
@@ -34,8 +27,6 @@ body {
 //
 //  a        - base link
 // :focus   - focus, hover, active style
-//
-// Styleguide 1.3.7
 
 a {
   color: $action-color;
@@ -48,6 +39,7 @@ a {
     color: tint($action-color, 20%);
   }
 }
+
 
 p {
   margin: 0 0 $base-spacing/2;
@@ -65,8 +57,7 @@ p {
 //
 // These are the base headings.  Other text tags can be made the same size by giving them the respective class.
 // ie using the h1 class will make an h4 tag the same size as using an h1 tag
-//
-// Styleguide 1.3.2
+
 h1,
 h2,
 h3,
@@ -104,6 +95,7 @@ h6, .h6 {
   font-size: em(18);
 }
 
+
 small {
   font-size: em(12);
 }
@@ -122,10 +114,6 @@ em {
 
 // Custom styles
 
-.base-font-color {
-  color: $base-font-color;
-}
-
 // Larger Fonts
 //
 // For when slightly larger than normal body font is needed
@@ -134,10 +122,6 @@ em {
 // <p class="{$modifiers}">{$modifiers}</p>
 //
 // .text-larger                - Larger text
-// .text-larger-teal           - Larger text, teal color
-// .text-larger-purple         - Larger text, purple color
-//
-// Styleguide 1.3.3
 
 // alter so user can only change certain properties
 @mixin text-larger($color: inherit, $font-size: em(18)) {
@@ -152,8 +136,6 @@ em {
 //
 // .page-sm-heading-teal       - Larger text, teal color
 // .page-lg-heading           -  Even Larger text, purple color
-//
-// Styleguide 1.3.4
 
 .page-sm-heading-teal {
   @include text-larger($teal, em(22));
@@ -183,8 +165,6 @@ em {
 // <h2 class="{$modifiers}">{$modifiers}</h2>
 //
 // .text-larger-margin      - Gives a margin bottom of $base-spacing
-//
-// Styleguide 1.3.5
 
 .text-larger-margin {
   margin-bottom: $base-spacing;
@@ -205,8 +185,6 @@ em {
 //
 // .link-base-color  - When you don't want a link to be given the default link color except on hover, focus.
 // .link-darker  - Use for links or unstyled buttons against a background color when needed to pass contrast tests
-//
-// Styleguide 1.3.8
 
 .link-base-color {
   color: $base-font-color;
@@ -216,15 +194,6 @@ em {
   color: $action-color-dark;
 }
 
-// End Links
-
-.block-span {
-  display: block;
-}
-
-.heading-inline {
-  display: inline;
-}
 
 // Alternate colored fonts
 //
@@ -233,8 +202,6 @@ em {
 //
 // .error                      - red to grab users attention that an error has occured. .alert and .attention also share this style.
 // .success                    - used for success messages
-//
-// Styleguide 1.3.9
 
 .error, .alert, .attention {
   color: $error;
@@ -250,8 +217,6 @@ em {
 // <h3 class="normal">Normal</h3>
 //
 // .normal                 - Can be added to any class or heading with font-weight bold, to make it normal weight
-//
-// Styleguide 1.3.12
 
 .normal {
   font-weight: normal;
@@ -268,8 +233,7 @@ em {
 //
 // .indented                 -  adds a margin left of $base-spacing
 // .indented-wide            -  adds a margin left of $base-spacing * 1.5
-//
-// Styleguide 1.3.13
+
 .indented {
   margin-left: $base-spacing;
   &-wide {
@@ -283,8 +247,6 @@ em {
 // <p class="mobile-center">Mobile Center</p>
 //
 // .mobile-center            -  Centers text at $small-screen-down
-//
-// Styleguide 1.3.14
 
 .mobile-center {
   @include breakpoint($small-screen-down) {
@@ -300,8 +262,6 @@ em {
 //
 // .mobile-left           -  Left aligns text or button at $small-screen-down
 // .mobile-left-top-margin    -  Left aligns text or button at $small-screen-down with top padding
-//
-// Styleguide 1.3.15
 
 .mobile-left {
   @include breakpoint($small-screen-down) {

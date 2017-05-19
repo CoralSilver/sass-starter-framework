@@ -1,8 +1,6 @@
 // elements/_lists.scss
 
 // Lists
-//
-// Styleguide 2.3
 
 // Unordered List (Base)
 //
@@ -15,8 +13,6 @@
 //  <li>List item</li>
 //  <li>List item</li>
 // </ul>
-//
-// Styleguide 2.3.1
 
 // Ordered List (Base)
 //
@@ -29,8 +25,7 @@
 //  <li>List item</li>
 //  <li>List item</li>
 // </ol>
-//
-// Styleguide 2.3.2
+
 
 // Unordered List (Default)
 //
@@ -43,8 +38,6 @@
 //  <li>List item</li>
 //  <li>List item</li>
 // </ul>
-//
-// Styleguide 2.3.3
 
 // Ordered List (Default)
 //
@@ -57,8 +50,7 @@
 //  <li>List item</li>
 //  <li>List item</li>
 // </ol>
-//
-// Styleguide 2.3.4
+
 
 ul,
 ol {
@@ -100,8 +92,7 @@ ol {
 //  <li>List item</li>
 //  <li>List item</li>
 // </ul>
-//
-// Styleguide 2.3.5
+
 
 // Unordered List (Bullet inside indented)
 //
@@ -115,7 +106,6 @@ ol {
 //  <li>List item</li>
 // </ol>
 //
-// Styleguide 2.3.6
 
 // Orange bullets
 //
@@ -128,8 +118,6 @@ ol {
 //  <li><a href="#">List item</a></li>
 //  <li><a href="#">List item</a></li>
 // </ol>
-//
-// Styleguide 2.3.7
 
 ul,
 ol {
@@ -167,8 +155,6 @@ ol {
 //
 // .list-extra-spacing   - adds extra margin below each list item
 // .paragraph-spacing-bottom-list  - adds margin equal to margin bottom for paragraphs below last list item
-//
-// Styleguide 2.3.8
 
 ul,
 ol {
@@ -195,8 +181,6 @@ ol {
 // The HTML ```<dl>``` Element encloses a list of pairs of terms and descriptions.
 // Common uses for this element are to implement a glossary or to display metadata.
 // Used with ```<dt>``` (defines terms/names) and ```<dd>``` (describes each term/name).
-//
-// Styleguide 2.3.9
 
 dl {
   margin-bottom: $small-spacing;

@@ -1,12 +1,7 @@
 //base/_buttons.scss
 
 // Elements
-//
-// Styleguide 2.0
-
 // btns
-//
-// Styleguide 2.1
 
 //  ---- Base btn style ---
 
@@ -31,8 +26,7 @@ button {
 // .btn            - Gives default btn styling
 // :hover             - Slight lightening to indicate hover and focus states
 // :disabled          - Dims the btn to indicate it cannot be used and changes cursor to not-allowed.
-//
-// Styleguide 2.1.1.
+
 
 .btn {
   appearance: none;
@@ -73,8 +67,6 @@ button {
 // .btn--light      - Modifier to make default btn light colored
 // :hover             - Slight lightening to indicate hover and focus states
 // :disabled          - Dims the btn to indicate it cannot be used and changes cursor to not-allowed.
-//
-// Styleguide 2.1.2.
 
 .btn {
   &--light {
@@ -100,8 +92,6 @@ button {
 // <btn class="btn btn--light btn--small">Small light btn</btn>
 //
 // .btn-small     - Modifier to make btn smaller than default
-//
-// Styleguide 2.1.3.
 
 .btn--small {
   font-weight: normal;
@@ -126,8 +116,6 @@ button {
 // <btn class="btn btn-large">Large btn</btn>
 //
 // .btn--large      - Used with btn class, modifies default btn class by making font size larger
-//
-// Styleguide 2.1.4.
 
 .btn--large {
   font-size: em(20);
@@ -139,8 +127,6 @@ button {
 // <btn class="btn btn-x-large">X-Large btn</btn>
 //
 // .btn--x-large    - Used with btn class, modifies default btn class by making font size larger and increasing passing
-//
-// Styleguide 2.1.5.
 
 .btn--x-large {
   font-size: 1.6em;
@@ -153,7 +139,6 @@ button {
 // <btn class="btn btn-centered">Centered btn</btn>
 //
 // .btn--centered    - Used with btn class, modifies default btn class by centering it
-// Styleguide 2.1.6.
 
 .btn--centered {
   display: block;
@@ -167,8 +152,6 @@ button {
 //
 // .btn-block    - Used with btn class, modifies default btn class
 // by making it the full width of its containing element.  Can also be used with anchor tag.
-//
-// Styleguide 2.1.7.
 
 .btn--block {
     display: block;
@@ -184,8 +167,7 @@ button {
 //  Use ```.reset-input``` class for input[type="reset"] and ```.anchor-btn``` class for btns to make them look like link instead of btn
 // :focus          - Lightened to indicate active, focus, and hover states like regular link
 //  Add `anchor-btn-center-mobile` when outside of a `modal-footer` or  `page-action-footer` section and the anchor btn needs to center at mobile size.
-//
-// Styleguide 2.1.9.
+
 .reset--input, .anchor--btn {
   color: $action-color;
   padding: 1px 0; //otherwise bottom of font below baseline getting cut off on Safari and Firefox
@@ -209,8 +191,7 @@ button {
 // <btn class="btn right margin-2em-top btn-mobile-block">Next step: Choose date and time</btn>
 //
 // .btn-mobile-block    - for use on btn or links styled as btns
-//
-// Styleguide 2.1.11.
+
 @include breakpoint($extra-small-screen-down) {
   .btn-mobile-block {
     display: block;
@@ -240,8 +221,7 @@ button {
 // .reset-input-mobile-block    - At $mini-phone-screen-down breakpoint removes left padding and increases margin top.
 //  Use when element is display inline-block to right of btn element and is moved below it at small breakpoint.
 //  Use in conjunction with reset-input class
-//
-// Styleguide 2.1.12.
+
 input[type="reset"].reset-input-mobile-block {  //this should be changed to mobile-block-btn as it is not modifying btn class
   @include breakpoint($extra-small-screen-down) {
   display: block;
@@ -257,8 +237,7 @@ input[type="reset"].reset-input-mobile-block {  //this should be changed to mobi
 //
 // .mobile-btn    - Add this class to links to give them the look of a btn at small breakpoint ($small-screen-down)
 // - Gives them a border instead of background-color
-//
-// Styleguide 2.1.13.
+
 .mobile-btn {
     @include breakpoint($medium-screen-down) {
     border: 2px solid $action-color;

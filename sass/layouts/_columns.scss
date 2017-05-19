@@ -1,8 +1,6 @@
 //layouts/_columns.scss
 
 // Columns
-//
-// Styleguide 4.4
 
 // Two columns
 //
@@ -14,8 +12,6 @@
 //
 // .two-columns    - Divides list items into one column by default, changes to two columns at larger device sizes.
 // Can be added dynamically only after there are a certain number of list items if desired.
-//
-// Styleguide 4.4.1
 
 %column-settings {
   break-inside: avoid;
@@ -51,8 +47,7 @@
 //
 // .three-columns    - Divides list items into one column by default, and adjusts number of columns up to two or three depending on screen size.
 // Can be added dynamically only after there are a certain number of list items if desired.
-//
-// Styleguide 4.4.2
+
 
 .three-column {
   // May want to change to setting columns this way:  3 columns maximum, each column must be at least 13em wide or it there will be less than 3 columns

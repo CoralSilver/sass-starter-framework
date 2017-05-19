@@ -1,10 +1,6 @@
-//base/_tables.scss
+//elements/_tables.scss
 
 // Tables
-//
-// Styleguide 2.4
-
-// Table (Base)
 //
 // Basic table without any classes added. All table headers above rows sholud be given ```scope="col"``` for accessibilty.
 // Column widths will be based on width of column cell contents.
@@ -26,8 +22,7 @@
 //    </tr>
 //  </tbody>
 //</table>
-//
-// Styleguide 2.4.1
+
 
 table {
   font-feature-settings: "kern", "liga", "tnum";
@@ -62,7 +57,7 @@ table {
 //  Table is given left/right padding on cells.  Include `justified-ends` class to remove left padding from first column and right padding from last column.
 //
 // markup:
-//<table class="table-with-cell-padding justified-ends">
+//<table class="table--cell-padding justified-ends">
 //    <tbody>
 //    <tr>
 //      <th scope="col">Table Header 1</th><th scope="col">Table Header 2</th><th scope="col">Table Header 3</th>
@@ -78,10 +73,8 @@ table {
 //    </tr>
 //  </tbody>
 //</table>
-//
-// Styleguide 2.4.2
 
-.table-with-cell-padding {
+.table--cell-padding {
   th {
     padding: $small-spacing .5em;
     &:first-child {
@@ -127,7 +120,7 @@ table {
 // can be applied to columns by giving the table headings percentage widths.
 //
 // markup:
-//<table class="table-fixed">
+//<table class="table--fixed">
 //    <tbody>
 //    <tr>
 //      <th scope="col">Table Header 1</th><th scope="col">Table Header 2</th><th scope="col">Table Header 3</th>
@@ -143,10 +136,9 @@ table {
 //    </tr>
 //  </tbody>
 //</table>
-//
-// Styleguide 2.4.3
 
-.table-fixed {
+
+.table--fixed {
   table-layout: fixed;
   width: 100%;
 }
@@ -172,16 +164,16 @@ table {
 //    </tr>
 //  </tbody>
 // </table>
-//
-// Styleguide 2.4.4
 
-.table-striped tbody tr:nth-child(odd) {
-  background-color: $background-light-gray;
+.table--striped {
+  tbody tr:nth-child(odd) {
+    background-color: $background-light-gray;
+  }
 }
 
 // Table with hover state on rows
 //
-// ```.rows-with-hover``` – add class to table to give rows hover state. Hover state is applied to rows within ```<tbody>```.
+// ```.table--hover``` – add class to table to give rows hover state. Hover state is applied to rows within ```<tbody>```.
 // Must place table headings within ```<thead>``` so that heading does not also get this hover style applied.
 // First and last child of ```<th>``` and ```<td>``` are given left or right padding. Width of columns is controlled by classes given to ```<th>```.
 //
@@ -214,8 +206,6 @@ table {
 //  </tr>
 //  </tbody>
 //  </table>
-//
-// Styleguide 2.4.5
 
 %invisible-header {
   border-bottom: 0;
@@ -236,8 +226,7 @@ table {
   }
 }
 
-.rows-with-hover {
-  width: 100.1%;   // hack to account for subpixel rounding errors in Safari and Chrome
+.table--hover {
   >tbody>tr {
     &:hover {
       background-color: darken($base-table-color, 3%);
@@ -263,72 +252,10 @@ table {
   }
 }
 
-// Table with hover state on rows, more columns
-//
-// Here the table headings have not been given percentage widths so they are equal.  All items are text-aligned left automatically, but "Test Type" and
-// "Test Score" table headings are centered with ```.centered-th```, while the columns ```<td>``` are centered with ```.center```.
-//
-// markup:
-//<table class="table-fixed rows-with-hover">
-// <thead>
-//    <tr><th scope="col">Name</th><th class="centered-th" scope="col">Test Type</th><th class="centered-th" scope="col">Test Score</th><th scope="col">Passing</th><th scope="col">Remediation*</th>
-//    </tr>
-// </thead>
-// <tbody>
-//  <tr>
-//    <td>Freiman, Allison</td><td class="center">Integrated</td><td class="center">58.7%<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td><td>Not a passing score<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td><td><img src="assets/images/attention_2x.png" class="td-icon-left attention-icon" alt="attention!">0:00</td>
-//  </tr>
-//  <tr>
-//    <td>Miller, Stephanie</td><td class="center">Integrated</td><td class="center">60.0%<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td><td>Not a passing score<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td><td>0:36<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td>
-//  </tr>
-//  <tr>
-//    <td>Salvador, Charlene</td><td class="center">Integrated</td><td class="center">62.7%<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td><td>Not a passing score<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td><td>1:02<img src="assets/images/green-checkmark_2x.png" class="td-icon-right green-checkmark-icon" alt="OK"></td>
-//  </tr>
-//  <tr>
-//    <td>McGovern, Terrence</td><td class="center">Integrated</td><td class="center">64.0%<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td><td>Not a passing score<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td><td>0:00<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td>
-//  </tr>
-//  <tr>
-//    <td>Williams, Kelly Ann</td><td class="center">Integrated</td><td class="center">68.5%<img src="assets/images/green-checkmark_2x.png" class="td-icon-right green-checkmark-icon" alt="OK"></td><td>Passing score<img src="assets/images/green-checkmark_2x.png" class="td-icon-right green-checkmark-icon" alt="OK"></td><td>0:31<img src="assets/images/attention_2x.png" class="td-icon-right attention-icon" alt="attention!"></td>
-//  </tr>
-//  </tbody>
-//  </table>
-//
-// Styleguide 2.4.6
-
-// Clickable rows
-//
-// Since wrapping an ```<tr>``` in an ```<a>``` element is not valid, entire rows are made clickable through JS by including
-// an ```<a>``` in one ```<td>```. Add class ```.rowlink``` and attribute ```data-link="row"``` to a ```<table>``` or ```<tbody>``` element.
-// A cell can be excluded by adding the ```.rowlink-skip``` class to the ```<td>```. This should be used with
-// ```.rows-with-hover``` class.
-//
-//markup:
-//<table class="rows-with-hover">
-//<thead>
-//    <tr><th scope="col">Name</th><th scope="col">Description</th><th scope="col">Actions</th></tr>
-//  </thead>
-//  <tbody data-link="row" class="rowlink">
-//    <tr><td><a href="#">Link One</a></td><td>Table Data</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
-//    <tr><td><a href="#">Link Two</a></td><td>Table Data</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
-//    <tr><td><a href="#">Link Three</a></td><td>Table Data</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
-//  </tbody>
-//</table>
-//
-// Styleguide 2.4.7
-
-table .rowlink td:not(.rowlink-skip) {
-  cursor: pointer;
-    a {
-      color: inherit;
-      font: inherit;
-      text-decoration: inherit;
-    }
-}
-
 // Table with last row having no border
 //
 //markup:
-//<table class="last-row-no-border">
+//<table class="table--last-no-border">
 //<thead>
 //    <tr><th scope="col">Name</th><th scope="col">Description</th><th scope="col">Actions</th></tr>
 //  </thead>
@@ -338,17 +265,17 @@ table .rowlink td:not(.rowlink-skip) {
 //    <tr><td><a href="#">Link Three</a></td><td>Table Data</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
 //  </tbody>
 //</table>
-//
-// Styleguide 2.4.8
 
-table.last-row-no-border tr:last-child td {
+.table--last-no-border {
+  tr:last-child td {
     border-bottom: 0;
+  }
 }
 
 // Basic table without border on bottom of rows
 //
 // markup:
-//<table class="table-no-row-borders">
+//<table class="table--no-row-borders">
 //    <tbody>
 //    <tr>
 //      <th scope="col">Table Header 1</th><th scope="col">Table Header 2</th><th scope="col">Table Header 3</th>
@@ -364,17 +291,15 @@ table.last-row-no-border tr:last-child td {
 //    </tr>
 //  </tbody>
 //</table>
-//
-// Styleguide 2.4.9
 
-.table-no-row-borders td {
+.table--no-row-borders td {
   border-bottom: 0;
 }
 
 // Add border around entire table (with cell padding class)
 //
 //markup:
-//<table class="table-bordered last-row-no-border table-with-cell-padding">
+//<table class="table--bordered">
 //<thead>
 //    <tr><th scope="col">Name</th><th scope="col">Description</th><th scope="col">Actions</th></tr>
 //  </thead>
@@ -384,47 +309,14 @@ table.last-row-no-border tr:last-child td {
 //    <tr><td><a href="#">Link Three</a></td><td>Table Data</td><td class="rowlink-skip"><a href="#">Action</a></td></tr>
 //  </tbody>
 //</table>
-//
-// Styleguide 2.4.10
 
-.table-bordered {
+.table--bordered {
   border: $base-border;
   border-collapse: separate;
   border-radius: $base-border-radius;
 }
 
-// Table with gray headings
-//
-// Basic table gray headings. In datatables only style that will apply is the change to text color.
-//
-// markup:
-//<table>
-//    <tbody>
-//    <tr class="gray-th">
-//      <th scope="col">Table Header 1</th><th scope="col">Table Header 2</th><th scope="col">Table Header 3</th>
-//    </tr>
-//    <tr>
-//      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-//    </tr>
-//    <tr>
-//      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-//    </tr>
-//    <tr>
-//      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-//    </tr>
-//  </tbody>
-//</table>
-//
-// Styleguide 2.4.13
-
-.gray-th th {
-  border-bottom: 2px solid $base-border-color;
-  color: $base-font-color;
-  font-weight: $bold;
-  padding-bottom: $small-spacing/4;
-}
-
-table td.break-long-word {
+.table--break {
   word-break: break-all;
   // Non standard for webkit
   word-break: break-word;
