@@ -34,28 +34,38 @@
 
 
 .section {
-  padding-bottom: 2*$base-spacing;
+  padding: {
+    top: 2*$base-spacing;
+    bottom: 2*$base-spacing;
+  }
   @include breakpoint($small-screen-down) {
-    padding-bottom: $base-spacing;
+    padding {
+      top: $base-spacing;
+      bottom: $base-spacing;
+    }
   }
 }
+
 .section-medium {
-  padding-bottom: $base-spacing;
+  padding: {
+    top: $base-spacing;
+    bottom: $base-spacing;
+  }
 }
+
 .section-thin {
-  padding-bottom: $base-spacing /2;
+  padding: {
+    top: $base-spacing /2;;
+    bottom: $base-spacing /2;;
+  }
+}
+
+.section--light-gray {
+  background-color: $light-gray;
 }
 
 @include breakpoint($small-screen-down) {
   .section-small-screen-no-padding {
     padding: 0;
   }
-}
-
-// Section with top and bottom margin to be used at top and bottom of page
-// Otherwise padding should all go in one direction
-
-.section-end {
-  margin-top: 2*$base-spacing;
-  margin-bottom: 2*$base-spacing;
 }

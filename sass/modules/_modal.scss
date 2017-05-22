@@ -1,64 +1,205 @@
-//modules/_modal.scss
+//modules/_modals.scss
 
-// Some styles taken from Skyline:https://github.com/crushlovely/skyline
-
-// These are very basic modals, which simply cover the entire
-// viewport from top to bottom, left to right.  Feel free
-// to edit the styles of modals to suit your needs.
-
-// Main modal box
+// Modals
 //
-.modal {
+// Styleguide 3.10
+
+// Default Modal
+//
+//  Shown here with inline styles to force display (normally hidden) and for it to not cover full page. Remove these inline style when copying.
+//  For a centered "OK" button use class `.OK-button-centered` inside `.modal-content`.
+//  Can also use `.modal-body-no-padding-top` class to remove padding top of the modal body.
+//  `aria-labelledby` on outermost modal div should reference the `id` of the modal heading.  On non-full-width modals, the heading should be `h5` sized if more than one line, or `h4` size if only one line.
+//
+// markup:
+// <div class="modal fade" id="loseWorkWarningModal" style="display: block; opacity: 1; position: static;" tabindex="-1" role="dialog" aria-labelledby="loseWorkWarningLabel">
+//  <div class="modal__dialog" role="document">
+//    <div class="modal__content">
+//      <div class="modal__header">
+//        <button type="button" class="close close-medium-icon-grey" aria-label="Close" data-dismiss="modal"></button>
+//        <p class="icon red-triangle-alert-large center"></p>
+//        <h5 class="attention center" id="loseWorkWarningLabel">
+//          Are you sure you want to leave this page? <br>Your work will be lost and you’ll have to start over.
+//        </h5>
+//      </div>
+//      <div class="modal__footer">
+//        <a href="rosters.html" class="anchor-button anchor-button-left center">Yes, leave this page</a>
+//        <button class="button" data-dismiss="modal">No, stay on this page</button>
+//      </div>
+//    </div>
+//   </div>
+// </div>
+//
+// sg-wrapper:
+// <div style="padding: 5px; height: 400px; background-color: darkgrey;">
+// <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 3.10.1
+%base-modal {
   position: fixed;
-  z-index: 200; // modals live in level 2
-  top: 0; bottom: 0; left: 0; right: 0;
-  height: 100%;
-  background: rgba(255, 255, 255, .96);
-  display: none; // is shown with js
-}
-
-
-// The content within the modal
-//
-.modal__container {
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  display: table;
-  height: 100%;
-  padding: 1*$unit;
-}
-
-
-// The close button
-//
-.modal__close {
-  position: absolute;
   top: 0;
   right: 0;
-  margin: .33*$unit .33*$unit 0 0;
-  font-size: 3em;
-  border: none;
-  background: none;
-  display: block;
-  &:hover, &:focus {
-    outline: none;
-    border: none;
-    opacity: .85;
-  }
-  &:active {
-    opacity: .6;
+  bottom: 0;
+  left: 0;
+  z-index: 99999999999;;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.modal {
+  @extend %base-modal;
+  display: none;
+  overflow: hidden;
+  background-color: rgba(255,255,255, .75);
+}
+
+.body-modal-open {
+  overflow: hidden;
+  .modal {
+   overflow-x: hidden;
+   overflow-y: auto;
   }
 }
 
-// modal body
-.modal__body {
-  display: table-cell;
-  height: 100%;
-  width: 100%;
-  vertical-align: middle;
+.modal__dialog {
+  position: relative;
+  width: auto;
+  margin: 5px;
+  @include breakpoint($extra-small-screen-up) {
+    margin: 10px;
+  }
+}
 
-  p {
-    margin-bottom: 1em;
-    font-size: 1.5em;
+@include breakpoint($small-screen-up) {
+  .modal__dialog {
+  width: 600px;
+  margin: 90px auto;
+  }
+  .modal__content {
+    box-shadow: none;
+  }
+}
+
+.modal__content {
+  position: relative;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 6px;
+  outline: 0;
+  box-shadow: 0 2px 2px transparentize(black, 0.8);;
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+  .OK-button-centered {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    width: 65px;
+  }
+}
+
+.modal__header {
+  min-height: 16.43px;
+  padding: $base-spacing 2em 0;
+  @include breakpoint ($extra-small-screen-up) {
+    padding: $base-spacing 3.5em 0;
+  }
+}
+
+.modal__body {
+  @include clearfix;
+    position: relative;
+    padding: 1em 2em;
+    padding-bottom: 0;
+    @include breakpoint ($extra-small-screen-up) {
+      padding: $base-spacing 3.5em 1em;
+    }
+  &-no-padding-top{
+    padding-top: 0;
+  }
+}
+
+.modal__footer {
+  @include clearfix;
+  padding: $base-spacing 2em;
+  position: relative;
+  text-align: right;
+  @include breakpoint ($extra-small-screen-up) {
+    padding: $base-spacing 3.5em 2em;
+  }
+  @include breakpoint($extra-small-screen-down) {
+    padding-bottom: 5em;
+    .button {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+    .anchor-button-left {
+      bottom: -.5em;
+      left: 50%;
+      margin-bottom: 1.5em;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+}
+
+
+
+// Full screen Modal
+//
+// Shown here with inline styles to force display (normally hidden) and for it to not cover full page. Remove these inline style when copying.
+// Can also include `.modal-full-overlay-transparent` to make modal background transparent.
+// For full width modals the heading should always be  `h4` size and `aria-labelledby` on the outer container div should reference the `id` of the heading.
+//
+// markup:
+// <div class="modal modal--full-overlay fade" style="display: block; opacity: 1; position: static;" id="selfPayStudentModal" tabindex="-1" role="dialog" aria-labelledby="selfPayStudentWarning">
+//    <div role="document">
+//      <button aria-label="Close" class="close close-large-icon" data-dismiss="modal" type="button"></button>
+//      <div class="modal--full-overlay__content">
+//        <div class="modal-header">
+//          <p class="icon red-triangle-alert-large center"></p>
+//          <h4 class="attention center" id="selfPayStudentWarning">Test Exceptions — Action Required</h4>
+//        </div>
+//        <div class="modal-body">
+//          <div class="margin-1em-bottom">
+//            <span class="text-larger-teal"><b>The following student accounts have been deactivated due to non-payment.
+//            They will not be able to access their test unless their balance is paid in full.</b></span>
+//          </div>
+//        </div>
+//        <div class="modal-footer thin-section">
+//          <a href="tests.html" id="selfPayButton" class="button">OK</a>
+//        </div>
+//     </div>
+//   </div>
+// </div>
+//
+// sg-wrapper:
+// <div style="padding: 5px; height: 400px;>
+// <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 3.10.2
+
+.modal--full-overlay {
+  background-color: $white;
+  .close {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+  }
+  &__content {
+    margin: 0 auto;
+    max-width: em(815px);
+    padding-bottom: $base-spacing;
+  }
+  &--transparent {
+    background-color: rgba(255,255,255, .9);
   }
 }
