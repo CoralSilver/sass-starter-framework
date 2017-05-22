@@ -9,24 +9,28 @@
 // markup:
 // <img src="http://fillmurray.com/400/300">
 
+
 img,
 picture {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;   // Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+  display: inline-block; // Get rid of gap under images by making them display: inline-block; by default
+  vertical-align: middle;
 }
 
-// Natural width image
+//  Responsive image
 //
-// .img-default - doesn't scale up image
+// .img-responsive -  fluid image will scale up or down to fill their parent container
 //
 // markup:
-// <img class="img-natural" src="http://fillmurray.com/1200/300">
+// <img class="img-responsive" src="http://fillmurray.com/1200/300">
+//
+// Styleguide 2.5.2
 
-.img--natural {
-  width: auto;
+.img--responsive {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
 }
+
 
 // Utility Classes
 //
