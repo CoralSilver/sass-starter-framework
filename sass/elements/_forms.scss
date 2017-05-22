@@ -65,9 +65,7 @@ label {
 //   <option>Option 2</option>
 // </select>
 
-#{$all-text-inputs},
-select[multiple=multiple],
-textarea {
+#{$all-text-inputs} {
   background-color: $base-background-color;
   border: $base-border;
   border-radius: $base-border-radius;
@@ -87,6 +85,9 @@ textarea {
     box-shadow: $form-box-shadow-focus;
     outline: none;
   }
+  &:placeholder {
+    color: lighten($base-font-color, 20%);
+  }
 }
 
 // Text Area
@@ -97,7 +98,6 @@ textarea {
 textarea {
   resize: vertical;
   min-height: 6em;
-  padding: 1em;
   width: 100%;
 }
 
