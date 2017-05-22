@@ -5,16 +5,14 @@
 /// @example scss - Usage
 ///   #{$all-text-inputs} {
 ///     border: 1px solid #f00;
-///   }
+//      &:focus,
+//      &:hover {
+//       border: 1px solid #0f0;
+//       }
+//       &:active {
+//       border: 1px solid #0f0;
+///     }
 ///
-///   #{$all-text-inputs-focus},
-///   #{$all-text-inputs-hover} {
-///     border: 1px solid #0f0;
-///   }
-///
-///   #{$all-text-inputs-active} {
-///     border: 1px solid #00f;
-///   }
 ///
 /// @example css - CSS Output
 ///   input[type="color"],
@@ -107,7 +105,4 @@ $text-inputs-list: 'input[type="color"]',
                    'input:not([type])',
                    'textarea';
 
-$all-text-inputs:        assign-inputs($text-inputs-list);
-$all-text-inputs-active: assign-inputs($text-inputs-list, active);
-$all-text-inputs-focus:  assign-inputs($text-inputs-list, focus);
-$all-text-inputs-hover:  assign-inputs($text-inputs-list, hover);
+$all-text-inputs:   $text-inputs-list;
